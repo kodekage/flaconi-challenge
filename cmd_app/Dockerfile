@@ -20,4 +20,5 @@ RUN go mod download
 
 USER flaconi
 
-CMD cd cmd-app && cat input.json | go run main.go currency country city
+CMD ls -l
+CMD cd cmd_app && cat input.json | go run main.go currency country city

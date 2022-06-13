@@ -1,4 +1,4 @@
-module github.com/kodekage/flaconi-challenge/cmd-app
+module github.com/kodekage/flaconi-challenge/cmd_app
 
 go 1.16
 
