@@ -1,4 +1,4 @@
-package main
+package utils
 
 import (
 	"bufio"
@@ -10,7 +10,7 @@ import (
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
-func processJsonToMap(input string) []map[string]interface{} {
+func ProcessJsonToMap(input string) []map[string]interface{} {
 	var result []map[string]interface{}
 
 	err := json.Unmarshal([]byte(input), &result)
@@ -22,7 +22,7 @@ func processJsonToMap(input string) []map[string]interface{} {
 	return result
 }
 
-func outputResult(data map[interface{}]interface{}) {
+func OutputResult(data map[interface{}]interface{}) {
 	body, err := json.MarshalIndent(data, "", " ")
 
 	if err != nil {
@@ -36,7 +36,7 @@ func outputResult(data map[interface{}]interface{}) {
 	}
 }
 
-func generateJsonFromStdin() string {
+func GenerateJsonFromStdin() string {
 	scanner := bufio.NewScanner(os.Stdin)
 	var jsonString string
 
@@ -51,7 +51,7 @@ func generateJsonFromStdin() string {
 	return jsonString
 }
 
-func inputJsonParser(inputJson []map[string]interface{}, nestKeys []string) map[interface{}]interface{} {
+func InputJsonParser(inputJson []map[string]interface{}, nestKeys []string) map[interface{}]interface{} {
 	result := make(map[interface{}]interface{})
 	output := result
 
