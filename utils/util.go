@@ -10,6 +10,9 @@ import (
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
+/*
+	This function processes JSON string into a map slice
+*/
 func ProcessJsonToMap(input string) []map[string]interface{} {
 	var result []map[string]interface{}
 
@@ -22,6 +25,9 @@ func ProcessJsonToMap(input string) []map[string]interface{} {
 	return result
 }
 
+/*
+	This function writes the data input into an output.json file
+*/
 func OutputResult(data map[interface{}]interface{}) {
 	body, err := json.MarshalIndent(data, "", " ")
 
@@ -36,6 +42,9 @@ func OutputResult(data map[interface{}]interface{}) {
 	}
 }
 
+/*
+	This function receives stdin values and parses into a JSON string
+*/
 func GenerateJsonFromStdin() string {
 	scanner := bufio.NewScanner(os.Stdin)
 	var jsonString string
@@ -51,6 +60,10 @@ func GenerateJsonFromStdin() string {
 	return jsonString
 }
 
+/*
+	This function contains the logic that transforms a slice of a flat map
+	and transforms it into a slice of arbitrary nested maps
+*/
 func InputJsonParser(inputJson []map[string]interface{}, nestKeys []string) map[interface{}]interface{} {
 	result := make(map[interface{}]interface{})
 	output := result
