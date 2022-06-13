@@ -3,10 +3,10 @@ version: "3.7"
 services:
   flaconi-cmd-app:
     build:
-      context: cmd-app
+      context: cmd_app
       dockerfile: Dockerfile
       target: dev
-    container_name: flaconi-cmd-app
+    container_name: flaconi-cmd_app
 #    restart: always
 #    networks:
 #      - flaconi
