@@ -16,7 +16,7 @@ To test/run the different applications follow the instructions below:
 - Create a `.env` file in the root of the cloned repository.
 - Copy the contents of `.env.sample` into the `.env` file 
 
-##### Running the command line app
+#### Running the command line app
 - Run the docker image for the app:
 ```
 $ docker-compose up --build flaconi-cmd-app
