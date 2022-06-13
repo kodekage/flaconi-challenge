@@ -3,20 +3,25 @@ version: "3.7"
 services:
   flaconi-cmd-app:
     build:
-      context: cmd_app
-      dockerfile: Dockerfile
-      target: dev
-    container_name: flaconi-cmd_app
-#    restart: always
-#    networks:
-#      - flaconi
+      context: .
+      dockerfile: containers/cmd/Dockerfile
+    container_name: flaconi_cmd_app
     volumes:
-      - ./:/go/src/app
+      - .:/app
       - gopkg:/go/pkg
+
+  flaconi-rest-app:
+    build:
+      context: .
+      dockerfile: containers/api/Dockerfile
+    container_name: flaconi_rest_app
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/app
+      - gopkg:/go/pkg
+    env_file: ./.env
 
 volumes:
   gopkg:
-#
-#networks:
-#  flaconi:
-#    driver: bridge
