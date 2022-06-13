@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: containers/cmd/Dockerfile
-#      target: dev
     container_name: flaconi_cmd_app
     volumes:
       - .:/app
