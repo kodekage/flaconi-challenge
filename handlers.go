@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"github.com/go-playground/validator/v10"
+	"github.com/kodekage/flaconi-challenge/utils"
 	"github.com/labstack/echo"
 	"net/http"
 )
@@ -30,8 +31,8 @@ func requestHandler(context echo.Context) error {
 			return newHTTPError(http.StatusBadRequest, "BadRequest", err.Error())
 		}
 
-		result := inputJsonParser(requestBody, nestingParams)
-		outputResult(result)
+		result := utils.InputJsonParser(requestBody, nestingParams)
+		utils.OutputResult(result)
 
 		return context.JSON(http.StatusOK, "OK")
 	}

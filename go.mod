@@ -1,4 +1,4 @@
-module github.com/kodekage/flaconi-challenge/rest_api
+module github.com/kodekage/flaconi-challenge
 
 go 1.16
 
