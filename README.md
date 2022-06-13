@@ -5,15 +5,18 @@ There are 2 go applications in this git repository. The go app found in `/app/ap
 ### Pre-requisites
 - Go
 - Docker
-- Clone this repository
 - Postman
 
 ### Running the Apps
 
 To test/run the different applications follow the instructions below:
 
-##### Running the command line app
+- Clone this repository
 - Navigate into the root directory of the cloned application.
+- Create a `.env` file in the root of the cloned repository.
+- Copy the contents of `.env.sample` into the `.env` file 
+
+##### Running the command line app
 - Run the docker image for the app:
 ```
 $ docker-compose up --build flaconi-cmd-app
@@ -22,7 +25,6 @@ $ docker-compose up --build flaconi-cmd-app
 After running this command, this will create an `output.json` file in the root directory of the cloned repository.
 
 #### Running the REST API
-- Navigate into the root directory of the cloned application.
 - Run the docker image for the REST API:
 ```
 $ docker-compose up --build flaconi-rest-app
