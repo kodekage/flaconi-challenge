@@ -9,6 +9,7 @@ services:
     volumes:
       - .:/app
       - gopkg:/go/pkg
+      - exclude:/app/docs
 
   flaconi-rest-app:
     build:
@@ -21,7 +22,9 @@ services:
     volumes:
       - ./:/app
       - gopkg:/go/pkg
+      - exclude:/app/docs
     env_file: ./.env
 
 volumes:
   gopkg:
+  exclude:
