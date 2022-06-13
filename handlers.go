@@ -10,6 +10,12 @@ import (
 
 var v = validator.New()
 
+type ResponseModel struct {
+	Status  int         `json:"status"`
+	Message string      `json:"message"`
+	Data    interface{} `json:"data"`
+}
+
 func requestHandler(context echo.Context) error {
 	var requestBody []map[string]interface{}
 	queries := context.QueryParams()
@@ -34,6 +40,12 @@ func requestHandler(context echo.Context) error {
 		result := utils.InputJsonParser(requestBody, nestingParams)
 		utils.OutputResult(result)
 
-		return context.JSON(http.StatusOK, "OK")
+		response := ResponseModel{
+			Status:  http.StatusOK,
+			Message: "Success",
+			Data:    "Output file created",
+		}
+
+		return context.JSON(http.StatusOK, response)
 	}
 }
