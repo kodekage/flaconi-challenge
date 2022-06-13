@@ -17,3 +17,4 @@
 output.json
 gin-bin
 .env
+.DS_Store
