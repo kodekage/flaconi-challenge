@@ -62,7 +62,7 @@ func GenerateJsonFromStdin() string {
 
 /*
 	This function contains the logic that transforms a slice of a flat map
-	and transforms it into a slice of arbitrary nested maps
+	and transforms it into a map of arbitrary nested objects
 */
 func InputJsonParser(inputJson []map[string]interface{}, nestKeys []string) map[interface{}]interface{} {
 	result := make(map[interface{}]interface{})
